@@ -6,8 +6,7 @@ async function sayHello() {
   return "Hello, World!";
 }
 
-// Using the async function
-sayHello().then((message) => console.log(message)); // Logs: Hello, World!
+// sayHello().then((message) => console.log(message)); // Logs: Hello, World!
 
 // ===========================
 
@@ -62,3 +61,25 @@ const fetchData1andProcess = async () => {
 };
 
 fetchData1andProcess();
+
+// ===========================
+
+function asynchronous_operational_method() {
+  let first_promise = new Promise((resolve, reject) => resolve("Hello"));
+  let second_promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(" GeeksforGeeks..");
+    }, 1000);
+  });
+  let combined_promise = Promise.all([first_promise, second_promise]);
+  return combined_promise;
+}
+
+function display() {
+  let data = asynchronous_operational_method();
+  console.log(data);
+}
+
+display();
+
+// ===========================
